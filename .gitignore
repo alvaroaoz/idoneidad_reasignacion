@@ -1,0 +1,26 @@
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos temporales de Word/Office (se crean al editar las plantillas .docx)
+~$*.docx
+~$*.xlsx
+*.tmp
+
+# Editores / IDE
+.vscode/
+.idea/
+*.swp
+*~
+
+# Dependencias (por si en el futuro se agrega tooling)
+node_modules/
+package-lock.json
+
+# Salidas generadas en pruebas (no deben versionarse)
+*.zip
+plantilla_cartas_consultorio.xlsx
+
+# Logs
+*.log
