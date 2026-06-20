@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cartas Consultorio Jurídico · Luis Amigó</title>
+  <meta name="description" content="Generador masivo de cartas de idoneidad y reasignación." />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml" />
+  <meta name="theme-color" content="#0a3d62" />
+  <link rel="stylesheet" href="./css/styles.css" />
+
+  <!-- Librerías locales (funcionan offline) -->
+  <script src="./vendor/pizzip.min.js"></script>
+  <script src="./vendor/pizzip-utils.min.js"></script>
+  <script src="./vendor/docxtemplater.js"></script>
+  <script src="./vendor/jszip.min.js"></script>
+  <script src="./vendor/xlsx.full.min.js"></script>
+  <script src="./vendor/FileSaver.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Generador de cartas</h1>
+    <p class="sub">Idoneidad + reasignación · Consultorio Jurídico Universidad Católica Luis Amigó</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>1. Descarga la plantilla</h2>
+      <p>Llena el Excel con un caso por fila. Por cada fila se generan <strong>dos cartas</strong>:
+         la idoneidad (a nombre del estudiante nuevo) y la reasignación.</p>
+      <button id="btnPlantilla" class="btn">⬇ Descargar plantilla Excel</button>
+    </section>
+
+    <section class="card">
+      <h2>2. Sube el Excel lleno</h2>
+      <div id="dropzone" class="dropzone">
+        <p>Arrastra aquí el Excel o <strong>haz clic para elegirlo</strong></p>
+        <small>.xlsx / .xls · todo se procesa en tu navegador, nada se envía a internet</small>
+      </div>
+      <input id="fileInput" type="file" accept=".xlsx,.xls" hidden />
+      <p id="resumen" class="resumen"></p>
+      <div id="tabla" class="tabla"></div>
+    </section>
+
+    <section class="card">
+      <h2>3. Genera las cartas</h2>
+      <button id="btnGenerar" class="btn primary" disabled>⚙ Generar y descargar ZIP</button>
+      <div id="log" class="log"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Funciona sin conexión una vez cargada. Datos sensibles nunca salen del equipo.</p>
+  </footer>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
