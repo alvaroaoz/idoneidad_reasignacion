@@ -88,3 +88,4 @@ footer {
   font-size: .85rem;
   padding: 1.5rem 1rem 2.5rem;
 }
+footer a { color: var(--azul); }

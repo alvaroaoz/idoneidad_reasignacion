@@ -59,33 +59,33 @@ export const FAMILIAS = {
   penal: {
     etiqueta: "Penal",
     idoneidad: {
-      plantilla: "templates/penal_idoneidad.docx",
+      plantilla: "penal_idoneidad",
       requeridos: ["destinatario", "estudiante_nuevo", "cc_nuevo", "usuario", "delitos", "id_identificador", "id_consultorio"],
     },
     reasignacion: {
-      plantilla: "templates/penal_reasignacion.docx",
+      plantilla: "penal_reasignacion",
       requeridos: ["destinatario", "estudiante_anterior", "estudiante_nuevo", "cc_nuevo", "usuario", "delitos", "id_identificador", "id_consultorio"],
     },
   },
   civil: {
     etiqueta: "Civil / Familia / Laboral",
     idoneidad: {
-      plantilla: "templates/civil_idoneidad.docx",
+      plantilla: "civil_idoneidad",
       requeridos: ["destinatario", "estudiante_nuevo", "cc_nuevo", "usuario", "tipo_proceso", "demandado", "id_consultorio"],
     },
     reasignacion: {
-      plantilla: "templates/civil_reasignacion.docx",
+      plantilla: "civil_reasignacion",
       requeridos: ["destinatario", "estudiante_anterior", "estudiante_nuevo", "cc_nuevo", "usuario", "tipo_proceso", "demandado", "id_identificador", "id_consultorio"],
     },
   },
   admin: {
     etiqueta: "Administrativo",
     idoneidad: {
-      plantilla: "templates/admin_idoneidad.docx",
+      plantilla: "admin_idoneidad",
       requeridos: ["destinatario", "estudiante_nuevo", "cc_nuevo", "usuario", "id_identificador", "id_consultorio"],
     },
     reasignacion: {
-      plantilla: "templates/admin_reasignacion.docx",
+      plantilla: "admin_reasignacion",
       requeridos: ["destinatario", "estudiante_anterior", "estudiante_nuevo", "cc_nuevo", "usuario", "tipo_proceso", "id_identificador", "id_consultorio"],
     },
   },

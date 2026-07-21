@@ -1,7 +1,7 @@
 /* Orquestación de la app. */
 import { FAMILIAS, MESES, resolverFamilia } from "./config.js";
 import { descargarPlantillaExcel, leerExcel } from "./excel.js";
-import { renderDocx } from "./templating.js";
+import { renderPdf } from "./pdf_render.js";
 
 const $ = (sel) => document.querySelector(sel);
 
@@ -93,7 +93,7 @@ function nombreCaso(fila) {
 }
 
 /* Nombre del documento dentro de la carpeta del caso. */
-const NOMBRE_DOC = { idoneidad: "Idoneidad.docx", reasignacion: "Reasignacion.docx" };
+const NOMBRE_DOC = { idoneidad: "Idoneidad.pdf", reasignacion: "Reasignacion.pdf" };
 
 /* Valida una fila contra los requeridos de su familia. Devuelve {familia, faltantes[]}. */
 function validarFila(fila) {
@@ -178,7 +178,7 @@ async function generar() {
     try {
       const carpeta = carpetaUnica(fila);
       for (const tipo of ["idoneidad", "reasignacion"]) {
-        const blob = await renderDocx(cfg[tipo].plantilla, construirDatos(fila, tipo));
+        const blob = await renderPdf(cfg[tipo].plantilla, construirDatos(fila, tipo));
         zip.file(`${carpeta}/${NOMBRE_DOC[tipo]}`, blob);
         generadas++;
       }
